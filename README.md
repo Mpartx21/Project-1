@@ -51,4 +51,4 @@ Finance Manager
 
 • As a finance manager, I can log in to view all the reimbursements for all employees.
 
-• I can filter the
+• I can filter the requests by the status of the tickets (approved, rejected, pending)
