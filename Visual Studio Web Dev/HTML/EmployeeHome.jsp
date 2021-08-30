@@ -1,6 +1,6 @@
 <jsp:include page="header.jsp">
 
-    <h1>Employee Rembursment Tickets</h1>
+    <h1>Employee Reimbursement Tickets</h1>
 
     <table class="table table-responsive">
         <thead>
@@ -12,12 +12,14 @@
             </tr>
         </thead>
         <tbody>
+            <c:forEach var="tickets" items="ticket">
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
+        </c:forEach>
         </tbody>
 
 
