@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-E:\projects\Revature\Project-1\Project-1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1141145358.index
-\Project-1-maven\target\generated-sources\annotations
-E:\projects\Revature\Project-1\Project-1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\393790404.index
-\com.revature\target\generated-sources\annotations
