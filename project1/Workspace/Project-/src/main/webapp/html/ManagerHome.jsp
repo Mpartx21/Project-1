@@ -1,9 +1,7 @@
 <jsp:include page="header.jsp"/>
 
 <!-- JSTL includes -->
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <h1>Employee Reimbursement Tickets</h1>
 
@@ -26,7 +24,7 @@
             </tr>
         </thead>
     <tbody>
-       <c:forEach var="ticket" items=${ticket}>
+       <c:forEach var="ticket" items="${ticket}">
             <tr>
                 <td></td>
                 <td></td>

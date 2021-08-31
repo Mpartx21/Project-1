@@ -27,5 +27,13 @@
             <button class="btn btn-dark" type="submit"><h4>Add new Reimbursement</h4></button>
         </form></div>
 
+        <div class="container">
+            <form method="get" action="">
+                <button type="submit" class="btn btn-dark">
+                    <h5>Add new Ticket</h5>
+                </button>
+            </form>
+        </div>
+
 
 <jsp:include page="footer.jsp">
