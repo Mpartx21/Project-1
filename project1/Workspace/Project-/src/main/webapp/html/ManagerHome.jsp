@@ -16,16 +16,29 @@
     <table class="table table-responsive">
         <thead>
             <tr>
-                <td>Sent Day</td>
-                <td>Employee</td>
-                <td>Amount</td>
-                <td>Approved By</td>
+            	<td>Ticket ID</td>
+                <td>Employee ID</td>
+                <td>Description</td>
                 <td>Status</td>
+                <td>Amount</td>
+                <td>Submit</td>
+                <td>Approved By</td>
+                <td>Respond</td>
+                <td>Reason</td>
             </tr>
         </thead>
     <tbody>
        <c:forEach var="ticket" items="${ticket}">
+       <!-- Here will put all of the data
+        but will just make hidden fields to make the 
+        process of querying a little easier
+         -->
+       
             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
