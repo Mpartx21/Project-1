@@ -31,7 +31,7 @@
        <c:forEach var="ticket" items="${ticket}">
        <!-- Here will put all of the data
         but will just make hidden fields to make the 
-        process of quering a little easier
+        process of querying a little easier
          -->
        
             <tr>
