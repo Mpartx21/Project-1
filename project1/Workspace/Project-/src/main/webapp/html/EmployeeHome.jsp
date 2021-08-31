@@ -28,9 +28,13 @@
         </table>
 
         <div class="container">
-        <form class="login-input" method="get" action="Add Ticket">
-            <button class="btn btn-dark" type="submit"><h4>Add new Reimbursement</h4></button>
-        </form></div>
+            <form method="get" action="">
+                <button type="submit" class="btn btn-dark">
+                    <h5>Add New Ticket</h5>
+                </button>
+            </form>
+        </div>
+        
 
 
 <jsp:include page="footer.jsp"/>
