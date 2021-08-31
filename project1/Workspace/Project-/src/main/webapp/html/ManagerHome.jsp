@@ -1,4 +1,4 @@
-<jsp:include page="header.jsp">
+<jsp:include page="header.jsp"/>
 
 <!-- JSTL includes -->
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -39,7 +39,7 @@
     </table>
 
 
-    <jsp:include page="footer.jsp">
+    <jsp:include page="footer.jsp"/>
 
     
         <script>
