@@ -1,10 +1,32 @@
 package models;
 
+import java.util.Set;
+
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "employee")
 public class Manager {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "mang_id")
 	private int id;
+	
+	@Column(name = "mang_name")
 	private String name;
+	
+	@Column(name = "mang_email")
 	private String email;
+	
+	@Column(name = "mang_password")
 	private String password;
+	
+	@OneToMany(mappedBy = "approved_by")
+	private Set<Ticket> respondedTickets;
+	
+	//Setters && Getters
 	public int getId() {
 		return id;
 	}
