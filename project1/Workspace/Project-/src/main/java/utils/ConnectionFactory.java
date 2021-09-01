@@ -10,7 +10,7 @@ public class ConnectionFactory {
  * update this for my instance 
  * 
  */
-    private final String url = "jdbc:mysql://localhost:3306/project0_db";
+    private final String url = "jdbc:mysql://localhost:3306/projectone";
     private final String userName ="root";
     private final String passWord = "password";
 
