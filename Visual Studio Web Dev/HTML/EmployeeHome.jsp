@@ -29,6 +29,7 @@
 
         <div class="container">
             <form method="get" action="">
+                <input type="hidden" name="employeeid" value="">
                 <button type="submit" class="btn btn-dark">
                     <h5>Add new Ticket</h5>
                 </button>

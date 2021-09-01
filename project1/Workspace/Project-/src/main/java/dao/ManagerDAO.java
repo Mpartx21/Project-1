@@ -5,6 +5,6 @@ import java.sql.SQLException;
 import models.Manager;
 
 public interface ManagerDAO {
-	Manager getManagerWithEmailPassword(String email,String password)throws SQLException;
+	Manager getManagerWithEmailPassword(String email,String password);
 
 }

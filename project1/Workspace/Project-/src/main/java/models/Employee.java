@@ -1,11 +1,32 @@
 package models;
 
+import java.util.Set;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employee")
 public class Employee {
+	
 	//Pojo made for hibernate
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "employee_id")
 	private int id;
+	
+	@Column(name = "employee_name")
 	private String name;
+	
+	@Column(name = "employee_email")
 	private String email;
+	
+	@Column(name = "employee_password")
 	private String password;
+	
+	@OneToMany(mappedBy = "employee_id")
+	private Set<Ticket> tickets;
+	
+	//Setters && Getters
 	public int getId() {
 		return id;
 	}
@@ -30,7 +51,12 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Set<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(Set<Ticket> tickets) {
+		this.tickets = tickets;
+	}
 	
 	
-
 }
