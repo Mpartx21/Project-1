@@ -1,44 +1,19 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import dao.TicketDAO;
 import dao.TicketDAOFactory;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.Ticket;
 
-/**
- * Servlet implementation class AddTicketServlet
- */
-@WebServlet("/AddTicketServlet")
 public class AddTicketServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-    /**
-     * Default constructor. 
-     */
-    public AddTicketServlet() {
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		TicketDAO dao = TicketDAOFactory.getTicketDAO();
 		response.setContentType("text/html");
 		request.getRequestDispatcher("AddTicket.html").include(request, response);
@@ -64,3 +39,4 @@ public class AddTicketServlet extends HttpServlet {
 	}
 
 }
+

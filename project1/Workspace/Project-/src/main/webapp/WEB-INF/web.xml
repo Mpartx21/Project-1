@@ -5,5 +5,12 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 id="WebApp_ID" 
 version="4.0">
 
-
+<servlet>
+    <servlet-name>addticketservlet</servlet-name>
+    <servlet-class>AddTicketServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>addticketservlet</servlet-name>
+    <url-pattern>/addticketservlet</url-pattern>
+</servlet-mapping>
 </web-app>
