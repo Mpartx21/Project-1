@@ -12,6 +12,8 @@
 
 # Servers
 Servers/
+dataSources.xml
+misc.xml
 
 #.metadata
 .metadata/
