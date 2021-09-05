@@ -41,6 +41,9 @@ public class Ticket {
 	@Column(name = "reason")
 	private String reason;
 	
+	@Column(name = "type")
+	private String type;
+	
 	
 //	Setters && Getters
 	public int getId() {
@@ -113,6 +116,14 @@ public class Ticket {
 
 	public void setReason(String reason) {
 		this.reason = reason;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 

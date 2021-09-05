@@ -14,7 +14,7 @@
 <body>
 
     <fieldset class="container">
-        <form action="" method="get" class="wrapper">
+        <form action="addticketservlet" method="post" class="wrapper">
             <div>
                 <label for="">Type of expense</label>
                 <div>
@@ -35,22 +35,22 @@
             <br>
             <div>
                 <label for="">Employee ID</label>
-                <input type="number" name="Hello" id="">
+                <input type="number" name="id" id="">
             </div>
             <br>
             <div>
                 <label for="">Amount</label>
-                <input type="number" name="Hello" id="">
+                <input type="number" name="amount" id="">
             </div>
             <br>
             <div>
                 <label for="">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
             </div>
             <br>
             <input class="btn btn-dark" type="submit" value="New Ticket">
 
-            <form action="EmployeeHome.jsp" method="get">
+            <form action="" method="get">
                 <button class="btn btn-dark" type="submit">
                     Cancel
                 </button>
