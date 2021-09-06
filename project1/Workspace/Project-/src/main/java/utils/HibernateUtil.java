@@ -28,8 +28,8 @@ public class HibernateUtil {
 				Properties settings = new Properties();
 				
 				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-				settings.put(Environment.URL, "jdbc:mysql://project-1.c6d84h8hnvqa.us-east-1.rds.amazonaws.com:6969/ ");
-				settings.put(Environment.USER, "bob");
+				settings.put(Environment.URL, "jdbc:mysql://db-project1.c2lxiqjdlwvs.us-west-2.rds.amazonaws.com:3306/db_project1?user=root&pasword=password");
+				settings.put(Environment.USER, "root");
 				settings.put(Environment.PASS, "password");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
 				settings.put(Environment.HBM2DDL_AUTO, "create");
