@@ -1,11 +1,10 @@
 package dao;
 
-import java.sql.PreparedStatement;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import models.Ticket;
 import utils.HibernateUtil;
@@ -13,7 +12,7 @@ import utils.HibernateUtil;
 public class TicketDAOImpl implements TicketDAO{
 	
 	Session session = null;
-	PreparedStatement stmt = null;
+	Query<Ticket> query = null;
 
 	@Override
 	public void addTicket(Ticket ticket) {
@@ -30,22 +29,51 @@ public class TicketDAOImpl implements TicketDAO{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public void updateTicket(Ticket ticekt) {
-		// TODO Auto-generated method stub
+	public void updateTicket(Ticket ticket) {
 		
+		session = HibernateUtil.getSessionFactory().openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+//		query = session
+//				.createQuery("UPDATE Ticket SET "
+//						+ "approved_by = :manager_id,responded = :date"
+//						+ ",status = :status"
+//						+ "WHERE ticket_id = :ticketid")
+//				.setParameter(0, ticket.getApproved_by())
+//				.setParameter(1, ticket.getResponded())
+//				.setParameter(2,ticket.getStatus())
+//				.setParameter(3, ticket.getId());
+//		
+//		query.executeUpdate();
+		session.saveOrUpdate(ticket);
+		
+		transaction.commit();
+		session.close();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Ticket> getTickets() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (List<Ticket>)HibernateUtil
+				.getSessionFactory()
+				.openSession()
+				.createQuery("FROM tickets").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Ticket> getEmployeesTicketsByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (List<Ticket>)HibernateUtil
+				.getSessionFactory()
+				.openSession()
+				.createQuery("FROM tickets WHERE employee_id = :id")
+				.setParameter("id", id).list();
+
 	}
 
 }

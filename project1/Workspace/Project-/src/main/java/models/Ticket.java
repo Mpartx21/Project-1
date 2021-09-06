@@ -14,14 +14,14 @@ public class Ticket {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "employee_id", nullable = false)
+	@JoinColumn(name = "employee_id", nullable = true)
 	private int employee_id;
 	
 	@Column(name = "status")
 	private String status;
 	
 	@ManyToOne
-	@JoinColumn(name = "approved_by", nullable = false)
+	@JoinColumn(name = "approved_by", nullable = true)
 	private int approved_by;
 	
 	@Column(name = "amount")
