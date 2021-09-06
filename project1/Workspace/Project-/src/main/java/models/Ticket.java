@@ -22,14 +22,14 @@ public class Ticket {
 	@Column(name = "ticket_id")
 	private int id;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = Employee.class)
 	@JoinColumn(name = "employee_id", nullable = true)
 	private int employee_id;
 	
 	@Column(name = "status")
 	private String status;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = Manager.class)
 	@JoinColumn(name = "approved_by", nullable = true)
 	private int approved_by;
 	
@@ -135,5 +135,4 @@ public class Ticket {
 		this.type = type;
 	}
 	
-
 }
