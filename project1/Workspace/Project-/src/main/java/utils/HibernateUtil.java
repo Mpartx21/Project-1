@@ -21,6 +21,8 @@ public class HibernateUtil {
 		if(sessionFactory == null) {
 			try {
 				Configuration config = new Configuration();
+				//wakeboard004317 && password
+				
 				
 				//Hibernate settings
 				Properties settings = new Properties();
