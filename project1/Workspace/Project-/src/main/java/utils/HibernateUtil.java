@@ -26,10 +26,10 @@ public class HibernateUtil {
 				Properties settings = new Properties();
 				
 				settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/projectone");
-				settings.put(Environment.USER, "root");
+				settings.put(Environment.URL, "jdbc:mysql://project-1.c6d84h8hnvqa.us-east-1.rds.amazonaws.com:6969/projectone");
+				settings.put(Environment.USER, "bob");
 				settings.put(Environment.PASS, "password");
-				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
 				settings.put(Environment.HBM2DDL_AUTO, "update");
 				settings.put(Environment.SHOW_SQL, "true");
 				
