@@ -13,12 +13,10 @@ version="4.0">
     <servlet-name>addticketservlet</servlet-name>
     <url-pattern>/addticketservlet</url-pattern>
 </servlet-mapping>
+</web-app>
+<!-- 
 <<<<<<< HEAD
 =======
 
-
-
-
-
 >>>>>>> 43e44e941263a69be54fb2d30384d71c30b21ef6
-</web-app>
+-->

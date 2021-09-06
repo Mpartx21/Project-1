@@ -4,8 +4,8 @@
 <hibernate-configuration>
  <session-factory name="">
   <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-  <property name="hibernate.connection.url">jdbc:mysql://project-1.c6d84h8hnvqa.us-east-1.rds.amazonaws.com:6969/ </property>
-  <property name="hibernate.connection.username">bob</property>
+  <property name="hibernate.connection.url">jdbc:mysql://db-project1.c2lxiqjdlwvs.us-west-2.rds.amazonaws.com:3306/db_project1?user=root&amp;password=password</property>
+  <property name="hibernate.connection.username">root</property>
   <property name="hibernate.connection.password">password</property>
   <property name="hibernate.connection.pool_size">1</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>

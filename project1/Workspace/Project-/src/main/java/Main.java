@@ -3,7 +3,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import models.Employee;
-import utils.HibernateUtil2;
+import utils.HibernateUtil;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
 		emp.setEmail("email.com");
 		emp.setPassword("password");
 		
-		SessionFactory seshs = HibernateUtil2.getSessionFactory();
+		SessionFactory seshs = HibernateUtil.getSessionFactory();
 		
 		Session sesh = seshs.openSession();
 		
