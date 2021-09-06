@@ -10,10 +10,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Employee emp = new Employee();
-		emp.setId(9999);
-		emp.setName("Fake Name");
-		emp.setEmail("email.com");
-		emp.setPassword("password");
+		emp.setId(88);
+		emp.setName("Suzy");
+		emp.setEmail("aol.com");
+		emp.setPassword("skittles");
 		
 		SessionFactory seshs = HibernateUtil2.getSessionFactory();
 		

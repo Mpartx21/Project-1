@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 
 import models.Ticket;
 import utils.HibernateUtil;
+import utils.HibernateUtil2;
 
 public class TicketDAOImpl implements TicketDAO{
 	
@@ -17,7 +18,7 @@ public class TicketDAOImpl implements TicketDAO{
 	@Override
 	public void addTicket(Ticket ticket) {
 		
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil2.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
 		

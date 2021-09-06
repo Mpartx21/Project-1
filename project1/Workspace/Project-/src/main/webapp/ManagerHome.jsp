@@ -1,7 +1,9 @@
 <jsp:include page="header.jsp"/>
 
 <!-- JSTL includes -->
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
     <h1>Employee Reimbursement Tickets</h1>
 
@@ -25,6 +27,7 @@
                 <td>Approved By</td>
                 <td>Respond</td>
                 <td>Reason</td>
+                <td>Type</td>
             </tr>
         </thead>
     <tbody>
@@ -35,15 +38,15 @@
          -->
        
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><c:out value="${ticket.ticket_id }" /></td>
+                <td><c:out value="${ticket.employee_id }" /></td>
+                <td><c:out value="${ticket.desc }" /></td>
+                <td><c:out value="${ticket.status }" /></td>
+                <td><c:out value="${ticket.amount }" /></td>
+                <td><c:out value="${ticket.approved_by }" /></td>
+                <td><c:out value="${ticket.responded }" /></td>
+                <td><c:out value="${ticket.reason }" /></td>
+                <td><c:out value="${ticket.type }" /></td>
             </tr>
         </c:forEach>
     </tbody>
