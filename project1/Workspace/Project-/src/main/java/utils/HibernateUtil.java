@@ -27,12 +27,12 @@ public class HibernateUtil {
 				//Hibernate settings
 				Properties settings = new Properties();
 				
-				settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-				settings.put(Environment.URL, "jdbc:mysql://project-1.c6d84h8hnvqa.us-east-1.rds.amazonaws.com:6969/");
+				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+				settings.put(Environment.URL, "jdbc:mysql://project-1.c6d84h8hnvqa.us-east-1.rds.amazonaws.com:6969/ ");
 				settings.put(Environment.USER, "bob");
 				settings.put(Environment.PASS, "password");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
-				settings.put(Environment.HBM2DDL_AUTO, "update");
+				settings.put(Environment.HBM2DDL_AUTO, "create");
 				settings.put(Environment.SHOW_SQL, "true");
 				
 				//Hibernate configuration mapping 
@@ -46,8 +46,7 @@ public class HibernateUtil {
 						.applySettings(config.getProperties()).build();
 				
 				sessionFactory = config.buildSessionFactory(serviceRegistry);
-				
-				
+				return sessionFactory;				
 			}catch (Exception e) {
 			// TODO: handle exception
 				e.printStackTrace();

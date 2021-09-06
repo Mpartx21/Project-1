@@ -1,7 +1,5 @@
 package dao;
 
-import java.sql.SQLException;
-
 import models.Manager;
 
 public interface ManagerDAO {

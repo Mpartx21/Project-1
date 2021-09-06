@@ -1,10 +1,8 @@
 package dao;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import models.Employee;
-import models.Manager;
 import utils.HibernateUtil;
 
 public class EmployeeDAOImpl implements EmployeeDAO {

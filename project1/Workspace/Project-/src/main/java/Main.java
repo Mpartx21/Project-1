@@ -1,8 +1,9 @@
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import models.Employee;
-import utils.HibernateUtil;
+import utils.HibernateUtil2;
 
 public class Main {
 
@@ -14,7 +15,10 @@ public class Main {
 		emp.setEmail("email.com");
 		emp.setPassword("password");
 		
-		Session sesh = HibernateUtil.getSessionFactory().openSession();
+		SessionFactory seshs = HibernateUtil2.getSessionFactory();
+		
+		Session sesh = seshs.openSession();
+		
 		Transaction transaction = sesh.beginTransaction();
 		
 		sesh.save(emp);

@@ -29,7 +29,7 @@ public class TicketDAOImpl implements TicketDAO{
 		
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void updateTicket(Ticket ticket) {
 		
