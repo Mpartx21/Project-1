@@ -1,41 +1,41 @@
 package dao;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
-import models.Employee;
+import models.Manager;
 import utils.HibernateUtil;
 
-public class EmployeeDAOImpl implements EmployeeDAO {
+public class ManagerDAOImpl implements ManagerDAO{
 	Session session = null;
+	Transaction transaction = null;
 
 	@Override
-	public Employee getEmployeeWithEmailPassword(String email, String password) {
+	public Manager getManagerWithEmailPassword(String email, String password) {
 		//You do not need the transactions when grabbing data but you do
-				//need it when you are inserting or updating 
-				// this will be the login in database query 
+		//need it when you are inserting or updating 
 		// this will be the login in database query 
-//		Employee employee = null;
+//		Manager manager = null;
 //		try {
 //			session = HibernateUtil.getSessionFactory().openSession();
-//			Transaction transaction = session.beginTransaction();
+//
 //			String hql = "FROM employee E WHERE E.employee_email = :email "
 //					+ "AND E.employee_password = :password";
 //			
-//			employee =(Employee) session.createQuery(hql)
+//			manager =(Manager) session.createQuery(hql)
 //					.setParameter("email", email).setParameter("password", password)
 //					.uniqueResult();
 //			
-//			transaction.commit();
-//			session.close();
+//	
 //		}catch(Exception e ) {
 //			e.printStackTrace();
 //		}
-//		return employee;
-		return (Employee) HibernateUtil
+//		return manager;		
+		return (Manager) HibernateUtil
 				.getSessionFactory()
 				.openSession()
-				.createQuery( "FROM employee  WHERE employee_email = :email "
-						+ "AND employee_password = :password")
+				.createQuery("FROM manager WHERE manager_email = :email "
+				+ "AND manager_password = :password")
 				.setParameter("email", email)
 				.setParameter("password", password).uniqueResult();
 	}

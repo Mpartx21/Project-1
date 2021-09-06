@@ -1,25 +1,23 @@
 package dao;
 
-import java.sql.PreparedStatement;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import models.Ticket;
 import utils.HibernateUtil;
 
 public class TicketDAOImpl implements TicketDAO{
 	
-	SessionFactory connection = null;
-	PreparedStatement stmt = null;
+	Session session = null;
+	Query<Ticket> query = null;
 
 	@Override
 	public void addTicket(Ticket ticket) {
-		connection = HibernateUtil.getSessionFactory();
 		
-		Session session = connection.openSession();
+		session = HibernateUtil.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
 		
@@ -31,22 +29,51 @@ public class TicketDAOImpl implements TicketDAO{
 		
 	}
 
+
 	@Override
-	public void updateTicket(Ticket ticekt) {
-		// TODO Auto-generated method stub
+	public void updateTicket(Ticket ticket) {
 		
+		session = HibernateUtil.getSessionFactory().openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+//		query = session
+//				.createQuery("UPDATE Ticket SET "
+//						+ "approved_by = :manager_id,responded = :date"
+//						+ ",status = :status"
+//						+ "WHERE ticket_id = :ticketid")
+//				.setParameter(0, ticket.getApproved_by())
+//				.setParameter(1, ticket.getResponded())
+//				.setParameter(2,ticket.getStatus())
+//				.setParameter(3, ticket.getId());
+//		
+//		query.executeUpdate();
+		session.saveOrUpdate(ticket);
+		
+		transaction.commit();
+		session.close();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Ticket> getTickets() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return (List<Ticket>)HibernateUtil
+				.getSessionFactory()
+				.openSession()
+				.createQuery("FROM tickets").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Ticket> getEmployeesTickets(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Ticket> getEmployeesTicketsByID(int id) {
+		
+		return (List<Ticket>)HibernateUtil
+				.getSessionFactory()
+				.openSession()
+				.createQuery("FROM tickets WHERE employee_id = :id")
+				.setParameter("id", id).list();
+
 	}
 
 }
