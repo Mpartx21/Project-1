@@ -1,0 +1,40 @@
+<jsp:include page="header.jsp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <h1>Employee Reimbursement Tickets</h1>
+
+    <label for="filter">Filter by: </label>
+
+    <select name="filter" id="filter">
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+    </select>
+    <button class="btn btn-dark" onclick="doThis()" value="Refresh" >Refresh</button>
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <td>Sent Day</td>
+            <td>Employee</td>
+            <td>Amount</td>
+            <td>Approved By</td>
+            <td>Status</td>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="tickets" items="ticket">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+
+
+        <jsp:include page="footer.jsp">
+
+            <script>
+                doThis = () => {alert("You touched it")}
+            </script>

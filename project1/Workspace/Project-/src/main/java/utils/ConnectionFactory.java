@@ -12,7 +12,7 @@ public class ConnectionFactory {
  */
     private final String url = "jdbc:mysql://localhost:3306/projectone";
     private final String userName ="root";
-    private final String passWord = "password";
+    private final String passWord = "wakeboard004317";
 
     private static final ConnectionFactory connectionFactory = new ConnectionFactory();
 
