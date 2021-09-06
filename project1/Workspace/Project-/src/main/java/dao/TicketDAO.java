@@ -8,5 +8,5 @@ public interface TicketDAO {
 	void addTicket(Ticket ticket);
 	void updateTicket(Ticket ticekt);
 	List<Ticket> getTickets();
-	List<Ticket> getEmployeesTickets(String email,String password);
+	List<Ticket> getEmployeesTicketsByID(int id);
 	}

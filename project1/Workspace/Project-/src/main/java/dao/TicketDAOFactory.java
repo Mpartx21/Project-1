@@ -4,9 +4,7 @@ public class TicketDAOFactory {
 	
 	private static TicketDAO dao;
 	
-	private TicketDAOFactory() {
-		
-	}
+	private TicketDAOFactory() {}
 	
 	public static TicketDAO getTicketDAO() {
 		if(dao == null)

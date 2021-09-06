@@ -12,14 +12,13 @@ import utils.HibernateUtil;
 
 public class TicketDAOImpl implements TicketDAO{
 	
-	SessionFactory connection = null;
+	Session session = null;
 	PreparedStatement stmt = null;
 
 	@Override
 	public void addTicket(Ticket ticket) {
-		connection = HibernateUtil.getSessionFactory();
 		
-		Session session = connection.openSession();
+		session = HibernateUtil.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
 		
@@ -44,7 +43,7 @@ public class TicketDAOImpl implements TicketDAO{
 	}
 
 	@Override
-	public List<Ticket> getEmployeesTickets(String email, String password) {
+	public List<Ticket> getEmployeesTicketsByID(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
