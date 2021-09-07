@@ -43,7 +43,7 @@ public class UpdateTicketServlet extends HttpServlet {
 		ticket.setReason(tick_reason);
 		ticket.setResponded(date);
 		ticket.setStatus(ticket_status);
-		ticket.setApproved_by(mang_id);
+		ticket.setMang_id(mang_id);
 		
 		dao.updateTicket(ticket);
 	}

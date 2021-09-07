@@ -32,6 +32,7 @@ public class AddTicketServlet extends HttpServlet {
 		ticket.setDescription(tick_desc);
 		ticket.setSubmitted(date);
 		ticket.setType(type);
+		ticket.setMang_id(54);
 		dao.addTicket(ticket);
 		
 //		throws an error about accessing private field mang_id for int 

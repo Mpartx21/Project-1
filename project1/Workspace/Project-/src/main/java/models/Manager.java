@@ -29,7 +29,7 @@ public class Manager {
 	@Column(name = "mang_password")
 	private String password;
 	
-	@OneToMany(mappedBy = "approved_by")
+	@OneToMany(mappedBy = "mang_id")
 	private Set<Ticket> respondedTickets;
 	
 	//Setters && Getters
