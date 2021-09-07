@@ -1,4 +1,5 @@
 <jsp:include page="header.jsp"/>
+<jsp:include page="all_css_js.jsp"/>
 
 <!-- JSTL includes -->
 <!-- It keeps throwing an error here about the uri -->
