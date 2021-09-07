@@ -2,17 +2,19 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+//import org.hibernate.query.Query;
 
+import models.Employee;
 import models.Ticket;
 import utils.HibernateUtil;
 
 public class TicketDAOImpl implements TicketDAO{
 	
 	Session session = null;
-	Query<Ticket> query = null;
+//	Query<Ticket> query = null;
 
 	@Override
 	public void addTicket(Ticket ticket) {
@@ -20,8 +22,13 @@ public class TicketDAOImpl implements TicketDAO{
 		session = HibernateUtil.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
+		Employee emp = (Employee)session.get(Employee.class,ticket.getEmployee_id().getId());
+		
+		ticket.setEmployee_id(emp);
+		
 		
 		session.save(ticket);
+		
 		
 		transaction.commit();
 		
