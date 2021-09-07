@@ -1,9 +1,12 @@
 package dao;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import models.Employee;
+import models.Ticket;
 import utils.HibernateUtil;
+import utils.HibernateUtil2;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 	Session session = null;
@@ -38,6 +41,20 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 						+ "AND employee_password = :password")
 				.setParameter("email", email)
 				.setParameter("password", password).uniqueResult();
+	}
+
+	@Override
+	public void addTicket(Employee employee) {
+	session = HibernateUtil2.getSessionFactory().openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		session.saveOrUpdate(employee);
+		
+		transaction.commit();
+		
+		session.close();
+		
 	}
 
 }

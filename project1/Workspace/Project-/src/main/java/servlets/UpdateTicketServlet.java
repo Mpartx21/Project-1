@@ -12,43 +12,39 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.Ticket;
 
-public class AddTicketServlet extends HttpServlet {
+public class UpdateTicketServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		
+		
+		
 		TicketDAO dao = TicketDAOFactory.getTicketDAO();
 		
 		response.setContentType("text/html");
 		
-		request.getRequestDispatcher("AddTicket.html").include(request, response);
+		request.getRequestDispatcher("UpdateTicket.html").include(request, response);
 		
-		//int emp = Integer.parseInt(request.getParameter("id"));
+		int mang_id = Integer.parseInt(request.getParameter("id"));
 //		
 		String ticket_status = request.getParameter("status");
 		
-		int amount = Integer.parseInt(request.getParameter("amount"));
-		
-		String type = request.getParameter("type");
-		
-		String tick_desc = request.getParameter("desc");
+		String tick_reason = request.getParameter("reason");
 		
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		
 		Date date = new Date(System.currentTimeMillis());
 		
-		
+		//Add hidden form for ticket_id
 		
 		Ticket ticket = new Ticket();
-		ticket.setEmployee_id(2);
-		ticket.setStatus("pending");
-		ticket.setAmount(amount);
-		ticket.setDescription(tick_desc);
-		ticket.setSubmitted(date);
-		ticket.setType(type);
-		ticket.setMang_id(54);
-		dao.addTicket(ticket);
 		
-//		throws an error about accessing private field mang_id for int 
 		
+		//ticket.setId(ticket_id);
+		ticket.setReason(tick_reason);
+		ticket.setResponded(date);
+		ticket.setStatus(ticket_status);
+		ticket.setMang_id(mang_id);
+		
+		dao.updateTicket(ticket);
 	}
-
 }
-
