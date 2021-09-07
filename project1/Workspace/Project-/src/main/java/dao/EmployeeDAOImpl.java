@@ -34,13 +34,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 //			e.printStackTrace();
 //		}
 //		return employee;
-		return (Employee) HibernateUtil
+		Employee emp ;
+		emp = (Employee) HibernateUtil
 				.getSessionFactory()
 				.openSession()
 				.createQuery( "FROM employee  WHERE employee_email = :email "
 						+ "AND employee_password = :password")
 				.setParameter("email", email)
-				.setParameter("password", password).uniqueResult();
+				.setParameter("password", password);
+		
+		return emp;
+		
+		
 	}
 
 	@Override
