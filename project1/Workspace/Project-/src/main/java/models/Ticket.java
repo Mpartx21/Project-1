@@ -24,7 +24,7 @@ public class Ticket {
 	
 	@ManyToOne(targetEntity = Employee.class)
 	@JoinColumn(name = "employee_id", nullable = true)
-	private int employee_id;
+	protected int employee_id;
 	
 	@Column(name = "status")
 	private String status;
