@@ -24,14 +24,14 @@ public class Ticket {
 	
 	@ManyToOne(targetEntity = Employee.class)
 	@JoinColumn(name = "employee_id", nullable = true)
-	private Employee employee_id;
+	protected int employee_id;
 	
 	@Column(name = "status")
 	private String status;
 	
 	@ManyToOne(targetEntity = Manager.class)
-	@JoinColumn(name = "approved_by", nullable = true)
-	private Manager approved_by;
+	@JoinColumn(name = "mang_id", nullable = true)
+	private int mang_id;
 	
 	@Column(name = "amount")
 	private int amount;
@@ -63,12 +63,12 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public Employee getEmployee_id() {
+	public int getEmployee_id() {
 		return employee_id;
 	}
 
-	public void setEmployee_id(Employee emp) {
-		this.employee_id = emp;
+	public void setEmployee_id(int employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public String getStatus() {
@@ -79,12 +79,12 @@ public class Ticket {
 		this.status = status;
 	}
 
-	public Manager getApproved_by() {
-		return approved_by;
+	public int getMang_id() {
+		return mang_id;
 	}
 
-	public void setApproved_by(Manager approved_by) {
-		this.approved_by = approved_by;
+	public void setMang_id(int mang_id) {
+		this.mang_id = mang_id;
 	}
 
 	public int getAmount() {

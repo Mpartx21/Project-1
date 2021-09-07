@@ -17,17 +17,26 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 
     <dependencies>
     
+<<<<<<< HEAD
     <dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
 	    <version>4.3.11.Final</version>
 	</dependency>
 
+=======
+    <dependency>             
+    <groupId>mysql</groupId>            
+     <artifactId>mysql-connector-java</artifactId>            
+      <version>8.0.26</version>         
+      </dependency>
+>>>>>>> main
 	
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.26</version>
+        <dependency>     
+        <groupId>org.hibernate</groupId>     
+        <artifactId>hibernate-core</artifactId>     
+       <!--  <version>4.3.11.Final</version>  -->
+       <version>5.5.6.Final</version>
         </dependency>
         
         <dependency>

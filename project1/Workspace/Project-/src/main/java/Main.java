@@ -9,11 +9,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Employee emp1 = new Employee();
-		
-		emp1.setName("Fake Name");
-		emp1.setEmail("email.com");
-		emp1.setPassword("password");
+		Employee emp = new Employee();
+		emp.setId(88);
+		emp.setName("Suzy");
+		emp.setEmail("aol.com");
+		emp.setPassword("skittles");
 		
 		SessionFactory seshs = HibernateUtil2.getSessionFactory();
 		
@@ -21,10 +21,9 @@ public class Main {
 		
 		Transaction transaction = sesh.beginTransaction();
 		
-		sesh.save(emp1);
+		sesh.save(emp);
 		
 		transaction.commit();
-		
 		sesh.close();
 	}
 

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for macos11 (x86_64)
 --
--- Host: localhost    Database: projectone
+-- Host: localhost    Database: db_project1
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
