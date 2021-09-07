@@ -24,6 +24,7 @@ public class Main {
 		sesh.save(emp1);
 		
 		transaction.commit();
+		
 		sesh.close();
 	}
 
