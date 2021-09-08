@@ -41,7 +41,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				.createQuery( "FROM employee  WHERE employee_email = :email "
 						+ "AND employee_password = :password")
 				.setParameter("email", email)
-				.setParameter("password", password);
+				.setParameter("password", password).uniqueResult();
 		
 		return emp;
 		
