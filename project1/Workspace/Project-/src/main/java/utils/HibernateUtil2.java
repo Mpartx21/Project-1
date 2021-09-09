@@ -12,7 +12,8 @@ public class HibernateUtil2 {
 		if(sessionFactory == null){
 			Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
 		
-			sessionFactory = cfg.buildSessionFactory();		
+			sessionFactory = cfg.buildSessionFactory();	
+			return sessionFactory;
 		}
 		return sessionFactory;
 	}

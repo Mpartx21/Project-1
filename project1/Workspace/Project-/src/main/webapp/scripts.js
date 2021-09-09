@@ -1,3 +1,4 @@
+/*
 $(document).ready(function(){
 	$('#submit').click(function(event){
 		
@@ -8,4 +9,5 @@ $(document).ready(function(){
 		$('#error').text(text);
 		});
 	});
-});//
+});
+*/

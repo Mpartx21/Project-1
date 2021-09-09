@@ -22,35 +22,46 @@ public class LoginServlet2 extends HttpServlet{
 		Employee emp ;
 		Manager mang;
 		
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 		HttpSession sesh = request.getSession();
 		RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 		
-		response.setContentType("text/html");
+	
 
 		
 		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String employeeOrManager = request.getParameter("employeeOrMangager");
 		
-		if(employeeOrManager == "employee") {
+		String password = request.getParameter("password");
+		String employeeOrManager = request.getParameter("employeeOrManager");
+		
+		System.out.print("hi"+email+password+employeeOrManager);
+		
+
+		
+		if(employeeOrManager.equals("employee")) {
 			emp = EmployeeDAOFactory.getEmployeeDAO().getEmployeeWithEmailPassword(email, password);
+			System.out.print("h2i"+email+password+employeeOrManager);
 			if(emp == null) {
+				System.out.print("h3i"+email+password+employeeOrManager);
 				rd.forward(request, response);
 			}
 			
 			sesh.setAttribute("employee", emp);
-			response.sendRedirect("/employeehome");
+			System.out.print("hi4 to employee"+email+password+employeeOrManager);
 			
-		}else if(employeeOrManager == "manager") {
+			response.sendRedirect("employeehome");
+			
+		}else if(employeeOrManager.equals("manager")) {
 			mang = ManagerDAOFactory.getManagerDAO().getManagerWithEmailPassword(email, password);
 			if(mang == null) {
 				rd.forward(request, response);
 			}
 			sesh.setAttribute("manager", mang);
-			response.sendRedirect("/managerhome");
+			response.sendRedirect("managerhome");
 		}
-		
-		
+		System.out.print("hi going to login"+email+password+employeeOrManager);
+		response.sendRedirect("Login.jsp");
 		
 	}
 }

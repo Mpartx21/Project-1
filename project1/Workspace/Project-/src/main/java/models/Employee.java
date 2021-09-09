@@ -34,7 +34,7 @@ public class Employee {
 	private String password;
 	
 
-	private Set<Ticket> tickets;
+
 	
 	//Setters && Getters
 	public int getId() {
@@ -61,10 +61,5 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Ticket> getTickets() {
-		return tickets;
-	}
-	public void setTickets(Set<Ticket> tickets) {
-		this.tickets = tickets;
-	}
+
 }

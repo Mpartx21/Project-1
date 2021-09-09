@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 
 import models.Employee;
 import models.Ticket;
-import utils.HibernateUtil;
 import utils.HibernateUtil2;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -34,13 +33,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 //			e.printStackTrace();
 //		}
 //		return employee;
-		return (Employee) HibernateUtil
+		return (Employee) HibernateUtil2
 				.getSessionFactory()
 				.openSession()
-				.createQuery( "FROM employee  WHERE employee_email = :email "
+				.createQuery( "FROM Employee  WHERE employee_email = :email "
 						+ "AND employee_password = :password")
 				.setParameter("email", email)
-				.setParameter("password", password).uniqueResult();
+				.setParameter("password", password).getSingleResult();
 	}
 
 	@Override
