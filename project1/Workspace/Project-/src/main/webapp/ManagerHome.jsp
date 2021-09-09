@@ -32,13 +32,16 @@
     <h1>Employee Reimbursement Tickets</h1>
 
     <label for="filter">Filter by: </label>
-
+	<form method="post" action="filter" >
     <select name="filter" id="filter">
         <option value="pending">Pending</option>
         <option value="approved">Approved</option>
         <option value="rejected">Rejected</option>
+        <option value="all">All</option>
     </select>
-    <button onclick="doThis()" value="Refresh" ></button>
+    <input type="submit" id="submit" value="Refresh" />
+    </form>
+    
     <table class="table table-responsive">
         <thead>
             <tr>
@@ -83,6 +86,15 @@
 
 
 
-    
+    <script>
+    $(document).ready(function(){
+    	$("#submit").click(function(event){
+    		
+    	    var filter = $('input[name*="filter"]').val();
+
+    	    $.post("/",{filter:filter},);
+    	});
+    });
+    </script>
 </body>
 </html>

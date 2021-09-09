@@ -9,4 +9,5 @@ public interface TicketDAO {
 	void updateTicket(Ticket ticekt);
 	List<Ticket> getTickets();
 	List<Ticket> getEmployeesTicketsByID(int id);
+	List<Ticket> getTicketsByStatus(String status);
 	}

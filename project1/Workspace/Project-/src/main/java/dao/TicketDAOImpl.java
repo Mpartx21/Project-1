@@ -95,4 +95,15 @@ public class TicketDAOImpl implements TicketDAO{
 
 	}
 
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Ticket> getTicketsByStatus(String status) {
+		return (List<Ticket>)HibernateUtil2
+				.getSessionFactory()
+				.openSession()
+				.createQuery("FROM Ticket WHERE status = :status")
+				.setParameter("status", status).list(); 
+	}
+
 }
