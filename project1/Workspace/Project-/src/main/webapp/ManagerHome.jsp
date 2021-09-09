@@ -45,14 +45,13 @@
     <table class="table table-responsive">
         <thead>
             <tr>
-            <!-- 	<td>Ticket ID</td> -->
+           		<td>Ticket ID</td> 
                 <td>Employee ID</td>
              <!--    <td>Description</td> -->
                 <td>Status</td>
                 <td>Amount</td>
                 <td>Submit</td>
                 <td>Respond</td>
-                <td>Reason</td>
                 <td>Type</td>
          
             </tr>
@@ -65,13 +64,12 @@
          -->
        
             <tr>
-             <%--    <td><c:out value="${ticket.ticket_id }" /></td> --%>
+             <td><c:out value="${ticket.id }" /></td>
                 <td><c:out value="${ticket.employee_id }" /></td>
               <%--   <td><c:out value="${ticket.desc }" /></td> --%>
                 <td><c:out value="${ticket.status }" /></td>
                 <td><c:out value="${ticket.amount }" /></td>
-                <td><c:out value="${ticket.responded }" /></td>
-                <td><c:out value="${ticket.reason }" /></td>
+                <td><c:out value="${ticket.submitted }" /></td>
                 <td><c:out value="${ticket.type }" /></td>
         
             </tr>
@@ -79,14 +77,14 @@
     </tbody>
     </table>
        	
-            <form method="post" action="updatestatus" >
+            <form method=post action="updatestatus" >
              <label>Ticket ID</label>   
-         <input type="text" placeholder="Enter Ticket id" id="ticketId" name="ticketid"/>
+         <input placeholder="Enter Ticket id" id="ticketId" name="ticketid">
    <select name="status" id="filter">
        <option value="approved">Approved</option>
        <option value="rejected">Rejected</option>
    </select>
-   <input type="submit" id="submitstatus" value="Update" />
+   <input type="submit" id="submitstatus" value="Update" >
    </form>
   		
 
@@ -111,10 +109,10 @@
 
     $(document).ready(function(){
     	$("#submitstatus").click(function(event){
-    		var ticketId = $('input[name*="ticketId"]').val();
+    		var ticketId = $("#ticketId").val();
     	    var status = $('input[name*="status"]').val();
 
-    	    $.post("/",{filter:filter,ticketId:ticketId},);
+    	    $.post("/",{status:status,ticketId:ticketId},);
     	});
     });
     </script>

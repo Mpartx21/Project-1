@@ -21,15 +21,12 @@ public class Ticket {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ticket_id")
 	private int id;
-	
 
-	
-	
+	@Column(name = "employee_id", nullable = true)
+	private int employee_id;
+
 	@Column(name = "status")
 	private String status;
-	
-
-	
 	
 	@Column(name = "amount")
 	private int amount;
@@ -41,14 +38,18 @@ public class Ticket {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date submitted;
 	
-	
-	
-	
 	@Column(name = "type")
 	private String type;
 	
 	
 //	Setters && Getters
+		public void setEmployee_id(int employee_id) {
+		this.employee_id = employee_id;
+	}
+	
+	public int getEmployee_id() {
+		return employee_id;
+	}
 	public int getId() {
 		return id;
 	}
@@ -99,8 +100,6 @@ public class Ticket {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	
 	
 	
 }

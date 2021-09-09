@@ -72,10 +72,10 @@ public class TicketDAOImpl implements TicketDAO{
 //				.setParameter(3, ticket.getId());
 //		
 //		query.executeUpdate();
-		session.saveOrUpdate(ticket);
+		session.update(ticket);
 		
 		transaction.commit();
-		session.close();
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -110,6 +110,14 @@ public class TicketDAOImpl implements TicketDAO{
 				.openSession()
 				.createQuery("FROM Ticket WHERE status = :status")
 				.setParameter("status", status).list(); 
+	}
+
+
+	@Override
+	public Ticket getTicketByTicketId(int ticketId) {
+		return (Ticket)HibernateUtil2.getSessionFactory()
+				.openSession().createQuery("FROM Ticket WHERE ticket_id = :id")
+				.setParameter("id", ticketId).getSingleResult();
 	}
 
 }
