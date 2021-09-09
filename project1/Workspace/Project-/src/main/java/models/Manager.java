@@ -29,7 +29,7 @@ public class Manager {
 	@Column(name = "mang_password")
 	private String password;
 	
-	@OneToMany(mappedBy = "mang_id")
+	
 	private Set<Ticket> respondedTickets;
 	
 	//Setters && Getters
@@ -58,4 +58,10 @@ public class Manager {
 		this.password = password;
 	}
 	
+	public Set<Ticket> getRespondedTickets() {
+		return respondedTickets;
+	}
+	public void setRespondedTickets(Set<Ticket> respondedTickets) {
+		this.respondedTickets = respondedTickets;
+	}
 }
