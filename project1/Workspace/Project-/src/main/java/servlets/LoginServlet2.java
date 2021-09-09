@@ -61,7 +61,8 @@ public class LoginServlet2 extends HttpServlet{
 			response.sendRedirect("managerhome");
 		}
 		System.out.print("hi going to login"+email+password+employeeOrManager);
-		response.sendRedirect("Login.jsp");
+		// response.sendRedirect("Login.jsp");
+		 // rd.forward(request, response);
 		
 	}
 }

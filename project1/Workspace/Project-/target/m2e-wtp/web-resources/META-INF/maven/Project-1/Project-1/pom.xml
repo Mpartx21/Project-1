@@ -22,6 +22,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
      <artifactId>mysql-connector-java</artifactId>            
       <version>8.0.26</version>         
       </dependency>
+      
+      <dependency>            
+       <groupId>javax.servlet</groupId>             
+       <artifactId>javax.servlet-api</artifactId>
+                    <version>3.0.1</version>             
+                    <scope>provided</scope>    
+                         </dependency>
 	
         <dependency>     
         <groupId>org.hibernate</groupId>     
@@ -65,12 +72,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 	        <scope>provided</scope>
     	</dependency>
     	
-	    <dependency>
-	        <groupId>jakarta.el</groupId>
-	        <artifactId>jakarta.el-api</artifactId>
-	        <version>4.0.0</version>
-	        <scope>provided</scope>
-	    </dependency>
 	    
 	    <dependency>
 	        <groupId>jakarta.websocket</groupId>
@@ -78,6 +79,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 	        <version>2.0.0</version>
 	        <scope>provided</scope>
 	    </dependency>
+	    
+	    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+       <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+
+
 	    
 	    <dependency>
 	        <groupId>jakarta.security.enterprise</groupId>
@@ -92,6 +98,21 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 	        <version>9.0.0</version>
 	        <scope>provided</scope>
 	    </dependency>
+	    
+	  <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+<dependency>
+    <groupId>jakarta.el</groupId>
+    <artifactId>jakarta.el-api</artifactId>
+    <version>4.0.0</version>
+</dependency>
+        
+
 	
 
 		

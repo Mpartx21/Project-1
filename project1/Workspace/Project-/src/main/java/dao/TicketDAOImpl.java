@@ -76,21 +76,22 @@ public class TicketDAOImpl implements TicketDAO{
 	@Override
 	public List<Ticket> getTickets() {
 		
-		return (List<Ticket>)HibernateUtil
+		return (List<Ticket>)HibernateUtil2
 				.getSessionFactory()
 				.openSession()
-				.createQuery("FROM tickets").list();
+				.createQuery("FROM "
+						+ "Ticket").list();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Ticket> getEmployeesTicketsByID(int id) {
 		
-		return (List<Ticket>)HibernateUtil
+		return (List<Ticket>)HibernateUtil2
 				.getSessionFactory()
 				.openSession()
-				.createQuery("FROM tickets WHERE employee_id = :id")
-				.setParameter("id", id).list();
+				.createQuery("FROM Ticket WHERE employee_id = :id")
+				.setParameter("id", id).list(); 
 
 	}
 

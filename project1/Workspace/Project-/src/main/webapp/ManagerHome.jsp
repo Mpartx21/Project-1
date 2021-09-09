@@ -1,11 +1,33 @@
-<jsp:include page="header.jsp"/>
+
+<jsp:include page="all_css_js.jsp"/>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <jsp:include page="all_css_js.jsp"/>
 
+<html>
+<head>
+    <%@ page session="true"%>
+
+<title></title>
+
 <!-- JSTL includes -->
-<!-- It keeps throwing an error here about the uri -->
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
+
+<!-- CSS - jQuery DataTables -->
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+<!-- CSS - Bootstrap -->
+
+
+<!-- CSS - Custom -->
+
+</head>
+<body>
 
     <h1>Employee Reimbursement Tickets</h1>
 
@@ -20,32 +42,30 @@
     <table class="table table-responsive">
         <thead>
             <tr>
-            	<td>Ticket ID</td>
+            <!-- 	<td>Ticket ID</td> -->
                 <td>Employee ID</td>
-                <td>Description</td>
+             <!--    <td>Description</td> -->
                 <td>Status</td>
                 <td>Amount</td>
                 <td>Submit</td>
-                <td>Approved By</td>
                 <td>Respond</td>
                 <td>Reason</td>
                 <td>Type</td>
             </tr>
         </thead>
     <tbody>
-       <c:forEach var="ticket" items="${ticket}">
+       <c:forEach var="ticket" items="${tickets}">
        <!-- Here will put all of the data
         but will just make hidden fields to make the 
         process of querying a little easier
          -->
        
             <tr>
-                <td><c:out value="${ticket.ticket_id }" /></td>
+             <%--    <td><c:out value="${ticket.ticket_id }" /></td> --%>
                 <td><c:out value="${ticket.employee_id }" /></td>
-                <td><c:out value="${ticket.desc }" /></td>
+              <%--   <td><c:out value="${ticket.desc }" /></td> --%>
                 <td><c:out value="${ticket.status }" /></td>
                 <td><c:out value="${ticket.amount }" /></td>
-                <td><c:out value="${ticket.approved_by }" /></td>
                 <td><c:out value="${ticket.responded }" /></td>
                 <td><c:out value="${ticket.reason }" /></td>
                 <td><c:out value="${ticket.type }" /></td>
@@ -55,9 +75,14 @@
     </table>
 
 
-    <jsp:include page="footer.jsp"/>
+
+  <footer class="text-center">
+
+    </footer>   
+<!--Bootstrap javascript -->
+
+
 
     
-        <script>
-            doThis = () => {alert("You touched it")}
-        </script>
+</body>
+</html>

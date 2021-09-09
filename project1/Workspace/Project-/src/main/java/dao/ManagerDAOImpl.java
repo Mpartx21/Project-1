@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import models.Manager;
-import utils.HibernateUtil;
+import utils.HibernateUtil2;
 
 public class ManagerDAOImpl implements ManagerDAO{
 	Session session = null;
@@ -31,13 +31,13 @@ public class ManagerDAOImpl implements ManagerDAO{
 //			e.printStackTrace();
 //		}
 //		return manager;		
-		return (Manager) HibernateUtil
+		return (Manager) HibernateUtil2
 				.getSessionFactory()
 				.openSession()
-				.createQuery("FROM manager WHERE manager_email = :email "
-				+ "AND manager_password = :password")
+				.createQuery("FROM Manager WHERE mang_email = :email "
+				+ "AND mang_password = :password")
 				.setParameter("email", email)
-				.setParameter("password", password).uniqueResult();
+				.setParameter("password", password).getSingleResult();
 	}
 
 }
