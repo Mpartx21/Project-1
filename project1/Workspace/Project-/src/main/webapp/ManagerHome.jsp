@@ -54,6 +54,7 @@
                 <td>Respond</td>
                 <td>Reason</td>
                 <td>Type</td>
+         
             </tr>
         </thead>
     <tbody>
@@ -72,10 +73,22 @@
                 <td><c:out value="${ticket.responded }" /></td>
                 <td><c:out value="${ticket.reason }" /></td>
                 <td><c:out value="${ticket.type }" /></td>
+        
             </tr>
         </c:forEach>
     </tbody>
     </table>
+       	
+            <form method="post" action="updatestatus" >
+             <label>Ticket ID</label>   
+         <input type="text" placeholder="Enter Ticket id" id="ticketId" name="ticketid"/>
+   <select name="status" id="filter">
+       <option value="approved">Approved</option>
+       <option value="rejected">Rejected</option>
+   </select>
+   <input type="submit" id="submitstatus" value="Update" />
+   </form>
+  		
 
 
 
@@ -90,9 +103,18 @@
     $(document).ready(function(){
     	$("#submit").click(function(event){
     		
-    	    var filter = $('input[name*="filter"]').val();
+    	    var filter = $('input[name*="status"]').val();
 
     	    $.post("/",{filter:filter},);
+    	});
+    });
+
+    $(document).ready(function(){
+    	$("#submitstatus").click(function(event){
+    		var ticketId = $('input[name*="ticketId"]').val();
+    	    var status = $('input[name*="status"]').val();
+
+    	    $.post("/",{filter:filter,ticketId:ticketId},);
     	});
     });
     </script>

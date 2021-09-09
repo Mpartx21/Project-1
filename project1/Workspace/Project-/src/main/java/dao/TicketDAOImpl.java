@@ -98,7 +98,7 @@ public class TicketDAOImpl implements TicketDAO{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Ticket> getTicketsByStatus(String status) {
+	public List<Ticket> getTicketsByStatus(String status ) {
 		return (List<Ticket>)HibernateUtil2
 				.getSessionFactory()
 				.openSession()
