@@ -22,16 +22,16 @@ public class Ticket {
 	@Column(name = "ticket_id")
 	private int id;
 	
-	@ManyToOne(targetEntity = Employee.class)
-	@JoinColumn(name = "employee_id", nullable = true)
+
+	@Column(name = "employee_id", nullable = true)
 	protected int employee_id;
 	
 	@Column(name = "status")
 	private String status;
 	
-	@ManyToOne(targetEntity = Manager.class)
-	@JoinColumn(name = "mang_id", nullable = true)
-	private int mang_id;
+
+	@Column(name = "approved_by", nullable = true)
+	private int approved_by;
 	
 	@Column(name = "amount")
 	private int amount;
@@ -80,11 +80,11 @@ public class Ticket {
 	}
 
 	public int getMang_id() {
-		return mang_id;
+		return approved_by;
 	}
 
 	public void setMang_id(int mang_id) {
-		this.mang_id = mang_id;
+		this.approved_by = mang_id;
 	}
 
 	public int getAmount() {
