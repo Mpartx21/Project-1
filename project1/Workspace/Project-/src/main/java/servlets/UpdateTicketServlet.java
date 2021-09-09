@@ -17,7 +17,6 @@ public class UpdateTicketServlet extends HttpServlet {
 		
 		
 		
-		
 		TicketDAO dao = TicketDAOFactory.getTicketDAO();
 		
 		response.setContentType("text/html");
