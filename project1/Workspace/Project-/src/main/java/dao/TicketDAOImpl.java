@@ -60,19 +60,17 @@ public class TicketDAOImpl implements TicketDAO{
 		session = HibernateUtil2.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
+		System.out.print(ticket);
 		
-//		query = session
+//		Query query = session
 //				.createQuery("UPDATE Ticket SET "
-//						+ "approved_by = :manager_id,responded = :date"
-//						+ ",status = :status"
-//						+ "WHERE ticket_id = :ticketid")
-//				.setParameter(0, ticket.getApproved_by())
-//				.setParameter(1, ticket.getResponded())
+//						+ "status = :status, "
+//						+ "WHERE id = :ticketId")
 //				.setParameter(2,ticket.getStatus())
 //				.setParameter(3, ticket.getId());
 //		
 //		query.executeUpdate();
-		session.update(ticket);
+		session.saveOrUpdate(ticket);
 		
 		transaction.commit();
 

@@ -109,10 +109,10 @@
 
     $(document).ready(function(){
     	$("#submitstatus").click(function(event){
-    		var ticketId = $("#ticketId").val();
+    		var ticketId = $('input[name*="ticketId"]').val();
     	    var status = $('input[name*="status"]').val();
 
-    	    $.post("/",{status:status,ticketId:ticketId},);
+    	    $.post("/updatestatus",{status:status,ticketId:ticketId},);
     	});
     });
     </script>

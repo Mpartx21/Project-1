@@ -13,22 +13,23 @@ import models.Ticket;
 
 public class StatusUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
-		int ticketId=0;
+		//int ticketId=0;
 		String status = request.getParameter("status");
-		String st = request.getParameter("ticketId");
-		System.out.println(st);
-		if(st==null) {
-			try {
-				System.out.println(st.trim());
-				ticketId = Integer.parseInt(st.trim());
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		//String st = request.getParameter("ticketId");
+		//System.out.println(st);
+//		if(st==null) {
+//			try {
+//				System.out.println(st.trim());
+//				ticketId = Integer.parseInt(st.trim());
+//			}catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
 		System.out.println(status);
+		int ticketId = Integer.parseInt(request.getParameter("ticketId"));
+		//int ticketId = 2;
 		System.out.println(ticketId);
-//		int ticketid = Integer.parseInt(request.getParameter("ticketId"));
-//		System.out.println(ticketid);
+		//System.out.println(ticketId);
 		
 		Ticket ticket = TicketDAOFactory.getTicketDAO().getTicketByTicketId(ticketId);
 		ticket.setStatus(status);
