@@ -33,7 +33,7 @@ public class Employee {
 	@Column(name = "employee_password")
 	private String password;
 	
-	@OneToMany(mappedBy = "employee_id")
+
 	private Set<Ticket> tickets;
 	
 	//Setters && Getters
