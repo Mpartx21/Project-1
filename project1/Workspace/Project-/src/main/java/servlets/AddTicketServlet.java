@@ -18,6 +18,7 @@ public class AddTicketServlet extends HttpServlet {
 		
 		response.setContentType("text/html");
 		
+		
 		request.getRequestDispatcher("AddTicket.html").include(request, response);
 		
 		//int emp = Integer.parseInt(request.getParameter("id"));
@@ -30,20 +31,23 @@ public class AddTicketServlet extends HttpServlet {
 		
 		String tick_desc = request.getParameter("desc");
 		
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		java.util.Date date = new java.util.Date();
+
 		
-		Date date = new Date(System.currentTimeMillis());
+		
+		System.out.print(amount + " " + tick_desc);
 		
 		
 		
 		Ticket ticket = new Ticket();
-		ticket.setEmployee_id(2);
-		ticket.setStatus("pending");
-		ticket.setAmount(amount);
 		ticket.setDescription(tick_desc);
+		ticket.setStatus("pending");
+		//ticket.setId(4);
 		ticket.setSubmitted(date);
 		ticket.setType(type);
-		ticket.setMang_id(54);
+		ticket.setAmount(amount);
+		
+		
 		dao.addTicket(ticket);
 		
 //		throws an error about accessing private field mang_id for int 
