@@ -66,7 +66,7 @@ version="4.0">
 	<url-pattern>/filter</url-pattern>
 </servlet-mapping>
 
-<servlet>
+<!-- <servlet>
 	<servlet-name>updatestatus</servlet-name>
 	<servlet-class>servlets.StatusUpdate</servlet-class>
 </servlet>
@@ -75,7 +75,7 @@ version="4.0">
 	<servlet-name>updatestatus</servlet-name>
 	<url-pattern>/updatestatus</url-pattern>
 </servlet-mapping>
-
+ -->
 
 </web-app>
 <!-- 

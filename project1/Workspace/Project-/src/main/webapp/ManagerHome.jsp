@@ -77,8 +77,8 @@
     </tbody>
     </table>
        	
-            <form method=post action="updatestatus" >
-             <label>Ticket ID</label>   
+            <form method="post" action="StatusUpdate">
+             <label>Ticket ID</label>
          <input placeholder="Enter Ticket id" id="ticketId" name="ticketid">
    <select name="status" id="filter">
        <option value="approved">Approved</option>
@@ -107,14 +107,14 @@
     	});
     });
 
-    $(document).ready(function(){
+   /*  $(document).ready(function(){
     	$("#submitstatus").click(function(event){
     		var ticketId = $('input[name*="ticketId"]').val();
     	    var status = $('input[name*="status"]').val();
 
     	    $.post("/updatestatus",{status:status,ticketId:ticketId},);
     	});
-    });
+    }); */
     </script>
 </body>
 </html>
