@@ -15,18 +15,18 @@ public class StatusUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 		int ticketId=0;
 		String status = request.getParameter("status");
-		String st = request.getParameter("ticketId");
-		System.out.println(st);
-		if(st==null) {
-			try {
-				System.out.println(st.trim());
-				ticketId = Integer.parseInt(st.trim());
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		int st =Integer.parseInt( request.getParameter("ticketId"));
+//		System.out.println(st);
+//		if(st==null) {
+//			try {
+//				System.out.println(st.trim());
+//				ticketId = Integer.parseInt(st.trim());
+//			}catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
 		System.out.println(status);
-		System.out.println(ticketId);
+		System.out.println(st);
 //		int ticketid = Integer.parseInt(request.getParameter("ticketId"));
 //		System.out.println(ticketid);
 		
