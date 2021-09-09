@@ -24,11 +24,17 @@ public class TicketDAOImpl implements TicketDAO{
 		
 		Transaction transaction = session.beginTransaction();
 		
-		session.saveOrUpdate(ticket);
+		Query query = session.createQuery(
+				"INSERT into Ticket (amount, description, status, submitted, type) select ?0, ?1, ?2, ?3, ?4"
+				).setParameter(0, ticket.getAmount()).setParameter(1, ticket.getDescription())
+				.setParameter(2, ticket.getStatus()).setParameter(3, ticket.getSubmitted()).setParameter(4, ticket.getType());
+			query.executeUpdate();
+		
+//		session.emit(ticket);
 		
 		transaction.commit();
 		
-		session.close();
+	//	session.close();
 		
 		
 //		session = HibernateUtil2.getSessionFactory().openSession();       

@@ -18,20 +18,18 @@ import javax.persistence.TemporalType;
 public class Ticket {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ticket_id")
 	private int id;
 	
 
-	@Column(name = "employee_id", nullable = true)
-	protected int employee_id;
+	
 	
 	@Column(name = "status")
 	private String status;
 	
 
-	@Column(name = "approved_by", nullable = true)
-	private int approved_by;
+	
 	
 	@Column(name = "amount")
 	private int amount;
@@ -43,12 +41,8 @@ public class Ticket {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date submitted;
 	
-	@Column(name = "responded", columnDefinition="DATETIME")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date responded;
 	
-	@Column(name = "reason")
-	private String reason;
+	
 	
 	@Column(name = "type")
 	private String type;
@@ -63,13 +57,6 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public int getEmployee_id() {
-		return employee_id;
-	}
-
-	public void setEmployee_id(int employee_id) {
-		this.employee_id = employee_id;
-	}
 
 	public String getStatus() {
 		return status;
@@ -79,13 +66,6 @@ public class Ticket {
 		this.status = status;
 	}
 
-	public int getMang_id() {
-		return approved_by;
-	}
-
-	public void setMang_id(int mang_id) {
-		this.approved_by = mang_id;
-	}
 
 	public int getAmount() {
 		return amount;
@@ -111,21 +91,6 @@ public class Ticket {
 		this.submitted = submitted;
 	}
 
-	public Date getResponded() {
-		return responded;
-	}
-
-	public void setResponded(Date responded) {
-		this.responded = responded;
-	}
-
-	public String getReason() {
-		return reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
 
 	public String getType() {
 		return type;
@@ -134,5 +99,8 @@ public class Ticket {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	
+	
 	
 }
