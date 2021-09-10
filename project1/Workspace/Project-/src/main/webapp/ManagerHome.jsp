@@ -1,30 +1,28 @@
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 
-<jsp:include page="all_css_js.jsp"/>
-<%@page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-
-<jsp:include page="all_css_js.jsp"/>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <%@ page session="true"%>
+<jsp:include page="all_css_js.jsp"/>
 
-<title></title>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- JSTL includes -->
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 
-<!-- CSS - jQuery DataTables -->
+
+<!-- CSS - jQuery DataTables 
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+-->
 <link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
-<!-- CSS - Bootstrap -->
-
-
-<!-- CSS - Custom -->
 
 </head>
 <body>
@@ -76,7 +74,9 @@
         </c:forEach>
     </tbody>
     </table>
+
        	
+<<<<<<< HEAD
             <form method="post" action="StatusUpdate">
              <label>Ticket ID</label>
          <input placeholder="Enter Ticket id" id="ticketId" name="ticketid">
@@ -86,6 +86,23 @@
    </select>
    <input type="submit" id="submitstatus" value="Update" >
    </form>
+=======
+	     <form method="POST" action="updatestatus" >
+	     <div>
+	          <label>Ticket ID</label>   
+	         <input type="text" placeholder="Enter Ticket id" id="ticketid" name="ticketid" required>
+	     </div>
+	     <div>
+		   <select name="status" id="filter">
+		       <option value="approved">Approved</option>
+		       <option value="rejected">Rejected</option>
+		   </select>
+	   </div>
+	   <div>
+	   		<input type="submit" id="status" value="Update" >
+	   </div>
+	   </form>
+>>>>>>> refs/remotes/origin/final-final
   		
 
 
@@ -103,16 +120,31 @@
     		
     	    var filter = $('input[name*="status"]').val();
 
-    	    $.post("/",{filter:filter},);
+    	    $.post("/filter",{filter:filter},);
     	});
     });
 
+<<<<<<< HEAD
    /*  $(document).ready(function(){
     	$("#submitstatus").click(function(event){
     		var ticketId = $('input[name*="ticketId"]').val();
     	    var status = $('input[name*="status"]').val();
 
     	    $.post("/updatestatus",{status:status,ticketId:ticketId},);
+=======
+    $(document).ready(function(){
+    	$("#status").click(function(event){
+    
+    		var ticketid = $("#ticketid").val();
+    		if(ticketid== null){
+				ticketid = 2;
+        		}
+    	    var status = $('input[name*="status"]').val();
+
+    	    $.post("updatestatus",{status:status,ticketid:ticketid},function(text){
+    			$('#error').text(text);
+    		});
+>>>>>>> refs/remotes/origin/final-final
     	});
     }); */
     </script>

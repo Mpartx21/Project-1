@@ -16,6 +16,7 @@ import models.Employee;
 import models.Ticket;
 @WebServlet("/StatusUpdate")
 public class StatusUpdate extends HttpServlet {
+<<<<<<< HEAD
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
     	
     	Session session = null;
@@ -35,6 +36,25 @@ public class StatusUpdate extends HttpServlet {
         t1.setStatus(status);
 		
 		System.out.println(status);
+=======
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+		int ticketId=0;
+		String status = request.getParameter("status");
+		int st =Integer.parseInt( request.getParameter("ticketId"));
+//		System.out.println(st);
+//		if(st==null) {
+//			try {
+//				System.out.println(st.trim());
+//				ticketId = Integer.parseInt(st.trim());
+//			}catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+		System.out.println(status);
+		System.out.println(st);
+//		int ticketid = Integer.parseInt(request.getParameter("ticketId"));
+//		System.out.println(ticketid);
+>>>>>>> refs/remotes/origin/final-final
 		
 		
 		try {
