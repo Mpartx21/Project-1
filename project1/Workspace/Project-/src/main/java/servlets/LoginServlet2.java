@@ -3,6 +3,7 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 import dao.EmployeeDAOFactory;
 import dao.ManagerDAOFactory;
 import jakarta.servlet.RequestDispatcher;
@@ -28,7 +29,7 @@ public class LoginServlet2 extends HttpServlet{
 		RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
 		
 	
-
+		
 		
 		String email = request.getParameter("email");
 		
@@ -37,7 +38,6 @@ public class LoginServlet2 extends HttpServlet{
 		
 		System.out.print("hi"+email+password+employeeOrManager);
 		
-
 		
 		if(employeeOrManager.equals("employee")) {
 			emp = EmployeeDAOFactory.getEmployeeDAO().getEmployeeWithEmailPassword(email, password);

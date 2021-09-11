@@ -59,7 +59,7 @@
         </table>
 
         <div class="container">
-            <form method="get" action="">
+            <form method="get" action="AddTicket.html">
                 <button type="submit" class="btn btn-dark">
                     <h5>Add New Ticket</h5>
                 </button>

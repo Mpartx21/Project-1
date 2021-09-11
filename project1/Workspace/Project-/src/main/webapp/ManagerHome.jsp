@@ -49,7 +49,7 @@
                 <td>Status</td>
                 <td>Amount</td>
                 <td>Submit</td>
-                <td>Respond</td>
+            
                 <td>Type</td>
          
             </tr>

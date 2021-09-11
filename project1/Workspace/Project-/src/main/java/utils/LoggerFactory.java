@@ -8,7 +8,7 @@ public class LoggerFactory {
 	public LoggerFactory() {
 		logger = Logger.getLogger(LoggerFactory.class.getName());
 	}
-	public Logger getLogger() {
+	public  Logger getLogger() {
 		return logger;
 	}
 	
