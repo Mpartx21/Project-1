@@ -76,6 +76,17 @@
     </table>
 
        	
+<<<<<<< HEAD
+            <form method="post" action="StatusUpdate">
+             <label>Ticket ID</label>
+         <input placeholder="Enter Ticket id" id="ticketId" name="ticketid">
+   <select name="status" id="filter">
+       <option value="approved">Approved</option>
+       <option value="rejected">Rejected</option>
+   </select>
+   <input type="submit" id="submitstatus" value="Update" >
+   </form>
+=======
 	     <form method="POST" action="updatestatus" >
 	     <div>
 	          <label>Ticket ID</label>   
@@ -91,6 +102,7 @@
 	   		<input type="submit" id="status" value="Update" >
 	   </div>
 	   </form>
+>>>>>>> refs/remotes/origin/final-final
   		
 
 
@@ -112,6 +124,14 @@
     	});
     });
 
+<<<<<<< HEAD
+   /*  $(document).ready(function(){
+    	$("#submitstatus").click(function(event){
+    		var ticketId = $('input[name*="ticketId"]').val();
+    	    var status = $('input[name*="status"]').val();
+
+    	    $.post("/updatestatus",{status:status,ticketId:ticketId},);
+=======
     $(document).ready(function(){
     	$("#status").click(function(event){
     
@@ -124,8 +144,9 @@
     	    $.post("updatestatus",{status:status,ticketid:ticketid},function(text){
     			$('#error').text(text);
     		});
+>>>>>>> refs/remotes/origin/final-final
     	});
-    });
+    }); */
     </script>
 </body>
 </html>

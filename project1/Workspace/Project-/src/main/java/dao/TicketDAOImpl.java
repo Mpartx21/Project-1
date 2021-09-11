@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -55,27 +56,21 @@ public class TicketDAOImpl implements TicketDAO{
 
 
 	@Override
-	public void updateTicket(Ticket ticket) {
+	public void updateTicket(Ticket ticket) throws SQLException {
 		
 		session = HibernateUtil2.getSessionFactory().openSession();
 		
 		Transaction transaction = session.beginTransaction();
 		
-//		query = session
-//				.createQuery("UPDATE Ticket SET "
-//						+ "approved_by = :manager_id,responded = :date"
-//						+ ",status = :status"
-//						+ "WHERE ticket_id = :ticketid")
-//				.setParameter(0, ticket.getApproved_by())
-//				.setParameter(1, ticket.getResponded())
-//				.setParameter(2,ticket.getStatus())
-//				.setParameter(3, ticket.getId());
-//		
-//		query.executeUpdate();
+		      
 		session.update(ticket);
 		
+//		session.save();
+		System.out.println(ticket);
 		transaction.commit();
-
+		
+		session.close();
+		System.out.println(ticket);
 	}
 
 	@SuppressWarnings("unchecked")
